@@ -1,0 +1,19 @@
+{
+  "name": "wechat-teaching",
+  "version": "1.0.0",
+  "description": "Teaching System using WeChat",
+  "main": "wechat-teaching.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ytxgit/wechat-teaching.git"
+  },
+  "author": "yuant",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ytxgit/wechat-teaching/issues"
+  },
+  "homepage": "https://github.com/ytxgit/wechat-teaching#readme"
+}

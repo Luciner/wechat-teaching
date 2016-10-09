@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="http://128.199.176.191:8080/yuant/d3/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="http://128.199.176.191:8080/yuant/d3/d3.v3.js" charset="utf-8"></script>
+    <script src="http://128.199.176.191:8080/yuant/d3/nv.d3.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #chart1, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="chart1">
+    <svg></svg>
+</div>
+<script>
+    var socket = io('http://128.199.176.191:2727/statistics');
+    var historicalBarChart;
+    var chart = nv.models.discreteBarChart()
+        .x(function(d) { return d.label })
+        .y(function(d) { return d.value })
+        .staggerLabels(true)
+        //.staggerLabels(historicalBarChart[0].values.length > 8)
+        .showValues(true)
+        .duration(250)
+        ;
+
+    socket.on('init-data', function(data){
+        historicalBarChart = data;
+        nv.addGraph(function() {
+        d3.select('#chart1 svg')
+            .datum(historicalBarChart)
+            .call(chart);
+        nv.utils.windowResize(chart.update);
+            return chart;
+        });
+    });
+
+    var draw = function(){
+        d3.select('#chart1 svg')
+        .datum(historicalBarChart)
+        .call(chart);
+    }
+
+    socket.on('redraw',function(data){
+    	switch(data.option){
+    		case 'A': historicalBarChart[0].values[0].value++; break;
+    		case 'B': historicalBarChart[0].values[1].value++; break;
+    		case 'C': historicalBarChart[0].values[2].value++; break;
+    		case 'D': historicalBarChart[0].values[3].value++; break;
+    	}
+    	draw();
+    });
+    socket.on('clear-data', function(){
+        for (var i = 0; i < 4; i++) {
+            historicalBarChart[0].values[i].value = 0;
+        }
+        draw();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #F1F3F6;
+  color: #333;
+}
+
+.signin {
+  max-width: 370px;
+  margin: 0 auto;
+}
+
+.signin-text-zh{
+  margin-top: 70px;
+  padding: 10px;
+}
+.signin-text-en{
+  padding: 10px;
+}
+
+.signin-btn{
+  padding: 15px;
+  margin-top: 40px;
+}
+

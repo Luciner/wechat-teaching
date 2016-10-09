@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>options</title>
+	<style type="text/css">
+    div{
+        margin: auto;
+        text-align: center;
+        position: absolute;
+        color: white;
+        font-size: 30px;
+    }
+    div.option{
+        width: 170px;
+        height: 170px;
+        line-height: 170px;
+    }
+    div#a{
+    	background-color: #2178b4;
+        top: 100px;
+        left: 100px;
+
+    }
+    div#b{
+        background-color: #aec7e8;
+        top: 100px;
+        left: 300px;
+    }
+    div#c{
+        background-color: #ff8010;
+        top: 300px;
+        left: 100px;
+    }
+    div#d{
+        background-color: #ffbb79;
+        top: 300px;
+        left: 300px;
+    }
+    div#reset{
+        background: #00c400;
+        width: 200px;
+        height: 50px;
+        top: 500px;
+        left: 185px;
+        line-height: 50px;
+    }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+<div id="a" class="option">A</div>
+<div id="b" class="option">B</div>
+<div id="c" class="option">C</div>
+<div id="d" class="option">D</div>
+<div id="reset">Reset</div>
+
+<script>
+var socket = io('/statistics');
+
+document.getElementById("a").onclick=function(){
+	socket.emit('make-option',{option:'A'});
+};
+document.getElementById("b").onclick=function(){
+    socket.emit('make-option',{option:'B'});
+};
+document.getElementById("c").onclick=function(){
+    socket.emit('make-option',{option:'C'});
+};
+document.getElementById("d").onclick=function(){
+   socket.emit('make-option',{option:'D'});
+};
+document.getElementById("reset").onclick=function(){
+   socket.emit('clear-data');
+};
+
+</script>
+</body>
+</html>

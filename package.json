@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/ytxgit/wechat-teaching/issues"
   },
-  "homepage": "https://github.com/ytxgit/wechat-teaching#readme"
+  "homepage": "https://github.com/ytxgit/wechat-teaching#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.75.0",
+    "socket.io": "^1.5.0",
+    "wechat-enterprise": "^0.1.1"
+  }
 }

@@ -168,6 +168,7 @@ let historicalBarChart = [
 
 
 const getCorpApp = function(){
+	access_token = fs.readFileSync('./access_token.txt').toString();
 	let params = {
 		access_token: access_token,
 		agentid: '6'
@@ -189,11 +190,12 @@ const getCorpApp = function(){
 }
 
 const sendText = function(text){
+	access_token = fs.readFileSync('./access_token.txt').toString();
 	let params = {
 		access_token: access_token
 	};
 	let postData = {
-		   "touser": "1409013111",
+		   "touser": "@all",
 		   "msgtype": "text",
 		   "agentid": 6,
 		   "text": {
@@ -212,11 +214,12 @@ const sendText = function(text){
 }
 
 const sendOptions = function(){
+	access_token = fs.readFileSync('./access_token.txt').toString();
 	let params = {
 		access_token: access_token
 	};
 	let postData = {
-	"touser": "1409013111",
+	"touser": "@all",
 	"msgtype": "news",
 	"agentid": 6,
 	"news": {

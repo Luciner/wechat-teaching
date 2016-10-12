@@ -33,3 +33,7 @@ Oct 10, 2016
 
 * 修改`getCorpApp()`, `sendText(test)`, `sendOptions()`,解决`access_token`未刷新的问题
 * 修改`getCorpApp()`, `sendText(test)`, `sendOptions()`发送对象为@all
+
+Oct 12, 2016
+
+* 将`vue.js`下载至`public`目录以加快页面加载速度

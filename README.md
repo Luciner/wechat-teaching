@@ -37,3 +37,5 @@ Oct 10, 2016
 Oct 12, 2016
 
 * 将`vue.js`下载至`public`目录以加快页面加载速度
+* 修改`saveToken()`统一发送GET请求的方式
+* 将微信的请求url保存至wechatUrl.json中

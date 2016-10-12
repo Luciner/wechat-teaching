@@ -1,0 +1,6 @@
+{
+  "gettoken": "https://qyapi.weixin.qq.com/cgi-bin/gettoken?",
+  "agent_get": "https://qyapi.weixin.qq.com/cgi-bin/agent/get?",
+  "message_send": "https://qyapi.weixin.qq.com/cgi-bin/message/send?",
+  "options": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf76162fdcdee30d2&redirect_uri=http%3a%2f%2f128.199.176.191%3a2727%2foptions&response_type=code&scope=snsapi_base#wechat_redirect"
+}
